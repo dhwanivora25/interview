@@ -93,10 +93,16 @@
         "padding_top": 36,
         "padding_bottom": 28
       }
+    },
+    "a5afb582-83a2-4789-80ec-4ebb76dc352c": {
+      "type": "custom_key_ingredients",
+      "settings": {
+      }
     }
   },
   "order": [
     "main",
-    "related-products"
+    "related-products",
+    "a5afb582-83a2-4789-80ec-4ebb76dc352c"
   ]
 }
