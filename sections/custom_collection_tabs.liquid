@@ -1,0 +1,45 @@
+<section class="page-width">
+  <!-- Nav tabs -->
+  <ul class="collection_tab_wrapper" role="tablist">
+    {%- for block in section.blocks -%}
+      <li role="presentation" class="collection_tab{% if collection.url == block.settings.collection.url %} active{% endif %}" data-link="{{ block.settings.collection.url }}">
+        <a href="{{ block.settings.collection.url }}" aria-controls="{{ block.settings.collection.title | downcase }}" role="tab" data-toggle="tab">{{ block.settings.collection.title }}</a>
+      </li>
+    {% endfor %}
+  </ul>
+</section>
+
+
+{% schema %}
+  {
+    "name": "Collection Tabs",
+    "disabled_on": {
+        "groups": ["header", "footer"]
+    },
+    "settings": [],
+    "blocks": [
+    {
+      "name": "Collection",
+      "type": "collection",
+      "settings": [
+        {
+          "type": "collection",
+          "id": "collection",
+          "label": "Collection"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Collection Tabs"
+    }
+  ]
+}
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}
