@@ -1,11 +1,16 @@
-{% for product_ingredients in shop.metaobjects.product_ingredients.values %}
+{% for product_ingredients in product.metafields.custom.product_ingredients.value %}
     {% if forloop.first %}
-        <h2 class="text--center">KEY INGREDIENTS</h2>
+        <div class="key_ingredients">
+            <h2 class="text--center">KEY INGREDIENTS</h2>
+        </div>
     {% endif %}
 {% endfor %}
 
-<div class="key_ingredients_wrapper">
-    {% for product_ingredients in shop.metaobjects.product_ingredients.values %}
+
+    {% for product_ingredients in product.metafields.custom.product_ingredients.value %}
+        {% if forloop.first %}
+            <div class="key_ingredients_wrapper key_ingredients">
+        {% endif %}
         <div class="ingredients">
         {% if product_ingredients.enable == true %}
 
@@ -54,13 +59,16 @@
         
         {% endif %}
         </div>
+
+        {% if forloop.last %}
+            </div>
+        {% endif %}
     {% endfor %}
 </div>
 
 {% schema %}
 {
     "name": "Key Ingredients",
-    "class": "key_ingredients",
     "disabled_on": {
         "groups": ["header", "footer"]
     },

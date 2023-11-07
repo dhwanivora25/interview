@@ -92,7 +92,7 @@ button.modal-toggle {
         width: 30%;
    }
 }
-@media (min-width: 1024px) {
+@media (min-width: 999px) {
     .key_ingredients_wrapper{
         display: flex;
     }
@@ -105,7 +105,7 @@ button.modal-toggle {
         margin: 0 50px 50px 0;
     }
 }
-@media (max-width: 1024px) {
+@media (max-width: 999px) {
     .ingredients {
         padding: 20px 10px;
     }
