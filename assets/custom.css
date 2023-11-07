@@ -37,6 +37,7 @@ button.modal-toggle {
     padding: 0;
     margin: 0 auto;
     display: block;
+    cursor: pointer;
 }
 .modal_details {
     color: #346f34;
