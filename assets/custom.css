@@ -1,0 +1,111 @@
+/* Key ingredients */
+.text--center{
+    text-align: center;
+}
+.key_ingredients {
+    background: gainsboro;
+    padding: 20px;
+}
+.key_ingredients_wrapper {
+    padding: 20px;
+}
+.ingredients_title{
+    text-transform: uppercase;
+}
+.ingredients {
+    width: fit-content;
+    padding: 0 10px;
+}
+.ingredients_img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: fill;
+    margin: 0 auto;
+    display: block;
+}
+.ingredients_brief,
+.ingredients_title {
+    color: #346f34;
+}
+button.modal-toggle {
+    background: no-repeat;
+    border: none;
+    text-transform: uppercase;
+    color: #346f34;
+    border-bottom: 1px solid #346f34;
+    padding: 0;
+    margin: 0 auto;
+    display: block;
+}
+.modal_details {
+    color: #346f34;
+}
+
+/* Modal css */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 8887;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0 0 0 / 60%);
+    transition: all 1s ease-in-out;
+}
+.modal-content {
+    background: #fff;
+    margin: 10vh auto;
+    overflow-y: auto;
+    padding: 20px;
+    width: 75%;
+    border-radius: 8px;
+}
+.modal-top {
+    margin-left: auto;
+    text-align: right;
+}
+.modal-close {
+    color: #346f34;
+    text-decoration: none;
+    font-size: 22px;
+    line-height: 22px;
+    font-weight: 100;
+}
+.modal-close:hover, .modal-close:focus {
+    text-decoration: none;
+    cursor: pointer;
+}
+.modal-title {
+    color: #fff;
+}
+.ingredients_modal_img {
+    border-radius: 50%;
+}
+@media (min-width: 1366px) {
+    .modal-content {
+        margin: 10vh auto;
+        padding: 20px;
+        width: 30%;
+   }
+}
+@media (min-width: 1024px) {
+    .key_ingredients_wrapper{
+        display: flex;
+    }
+    .modal_details {
+        display: flex;
+    }
+    .ingredients_modal_img {
+        width: 250px;
+        height: 250px;
+        margin: 0 50px 50px 0;
+    }
+}
+@media (max-width: 1024px) {
+    .ingredients {
+        padding: 20px 10px;
+    }
+}

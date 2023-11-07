@@ -1,0 +1,58 @@
+{% for product_ingredients in shop.metaobjects.product_ingredients.values %}
+    {% if forloop.first %}
+        <h2 class="text--center">KEY INGREDIENTS</h2>
+    {% endif %}
+{% endfor %}
+
+<div class="key_ingredients_wrapper">
+    {% for product_ingredients in shop.metaobjects.product_ingredients.values %}
+        <div class="ingredients">
+        {% if product_ingredients.enable == true %}
+            <img src="{{ product_ingredients.image | img_url : '100x' }}" alt="{{ product_ingredients.name }}" class="ingredients_img">
+            <h3 class="ingredients_title text--center">{{ product_ingredients.name }}</h3>
+            <p class="ingredients_brief text--center">{{ product_ingredients.brief_description }}</p>
+           
+            <button class="modal-toggle" data-modal="{{ product_ingredients.name | handleize }}">Learn More</button>
+           
+            <div id="{{ product_ingredients.name | handleize }}" class="modal">
+                <div class="modal-content">
+                    <div class="modal-top">
+                        <span class="modal-close">&times;</span>
+                    </div>
+                    <div class="modal_details">
+                        <div>
+                            <img src="{{ product_ingredients.image | img_url : '200x' }}" alt="{{ product_ingredients.name }}" class="ingredients_modal_img">
+                        </div>
+
+                        <div>
+                            <h3 class="ingredients_title">{{ product_ingredients.display_name }}</h3>
+                            <p>{{ product_ingredients.other_info | newline_to_br }}</p>
+                        </div>
+                    </div>
+
+                    <p>{{ product_ingredients.main_description }}</p>
+                </div>
+            </div>
+        
+        {% endif %}
+        </div>
+    {% endfor %}
+</div>
+
+{% schema %}
+{
+    "name": "Key Ingredients",
+    "class": "key_ingredients",
+    "disabled_on": {
+        "groups": ["header", "footer"]
+    },
+    "settings": [
+    ],
+    "presets": [
+    {
+        "name": "Key Ingredients"
+    }
+    ]
+}
+{% endschema %}
+    
